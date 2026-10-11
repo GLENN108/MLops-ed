@@ -4,13 +4,13 @@ from src.meta_features import (
     compute_meta_features,
     detect_problem_type,
 )
-from src.meta_learner import MetaLearner
 
 
 def recommend_model(
     dataset_id: str,
     target_column: str,
 ) -> dict:
+    from src.meta_learner import MetaLearner
 
     df = load_dataset(dataset_id)
 

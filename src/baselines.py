@@ -10,7 +10,7 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.preprocessing import LabelEncoder
 from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
 
-from meta_features import detect_problem_type
+from src.meta_features import detect_problem_type
 
 warnings.filterwarnings("ignore")
 

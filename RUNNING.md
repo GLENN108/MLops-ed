@@ -31,19 +31,19 @@ Required Python packages from the project configuration (`pyproject.toml`):
 - numpy
 - pandas
 - scikit-learn
-- ydata_profiling
+- fg-data-profiling
 - fastapi>=0.115,<1.0
 - uvicorn[standard]>=0.30,<1.0
 - python-multipart>=0.0.9,<1.0
 
-Additional package needed for the standalone Streamlit UI:
+Optional dependency for the standalone Streamlit UI:
 
-- streamlit
+- Install with `pip install -e ".[streamlit]"`.
 
 ### Node / frontend
 
 - Node.js 18+
-- npm (or Bun, because the project includes `bun.lock` and `dev.sh` uses `bun run dev`)
+- npm
 
 Required frontend dependencies from `client/package.json`:
 
@@ -118,10 +118,10 @@ source .venv/bin/activate
 pip install -e .
 ```
 
-If you want to run the standalone Streamlit app too, also install:
+If you want to run the standalone Streamlit app too, install its optional dependency:
 
 ```bash
-pip install streamlit
+pip install -e ".[streamlit]"
 ```
 
 3. Install frontend dependencies:
@@ -129,7 +129,6 @@ pip install streamlit
 ```bash
 cd client
 npm install
-# or: bun install
 ```
 
 4. Start the backend from the project root:
@@ -143,7 +142,6 @@ uvicorn server.main:app --reload --port 5000
 ```bash
 cd client
 npm run dev
-# or: bun run dev
 ```
 
 6. Open the frontend in a browser:
@@ -168,7 +166,7 @@ From the project root:
 
 This script starts both the frontend and backend together.
 
-Important: it uses `bun run dev` for the frontend and `uvicorn ... --port 5000` for the backend. If Bun is not installed, use the manual setup above instead.
+The script uses npm for the frontend and `uvicorn ... --port 5000` for the backend.
 
 ## 6) Run the standalone Streamlit app
 
@@ -177,6 +175,7 @@ This repository also contains a standalone Streamlit user interface.
 From the project root:
 
 ```bash
+pip install -e ".[streamlit]"
 python -m streamlit run app.py
 ```
 

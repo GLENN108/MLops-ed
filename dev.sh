@@ -26,7 +26,7 @@ echo "Starting development servers..."
 
 (
     cd client
-    bun run dev 2>&1 | sed "s/^/${CLIENT_COLOR}[CLIENT]${RESET} /"
+    npm run dev 2>&1 | sed "s/^/${CLIENT_COLOR}[CLIENT]${RESET} /"
 ) &
 
 CLIENT_PID=$!

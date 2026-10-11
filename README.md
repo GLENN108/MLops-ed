@@ -14,7 +14,7 @@ The system currently provides four major capabilities:
 
 1. **Dataset Profiling**
 
-   * Generates an HTML data-profile report using `ydata-profiling`.
+   * Generates an HTML data-profile report using `fg-data-profiling`.
    * Provides statistical and structural information about the uploaded dataset.
 
 2. **Algorithm Prediction**
@@ -176,7 +176,7 @@ The backend stores the dataset and assigns an identifier that can be used by sub
 
 ## 2. Dataset Profiling
 
-The profiling service loads the selected dataset and generates a `ydata-profiling` report.
+The profiling service loads the selected dataset and generates a `fg-data-profiling` report.
 
 ```text
 Dataset
@@ -185,7 +185,7 @@ Dataset
 Pandas DataFrame
    │
    ▼
-ydata-profiling
+fg-data-profiling
    │
    ▼
 HTML Profile Report
@@ -401,8 +401,10 @@ The frontend does **not** perform the ML computations itself.
 * Pandas
 * NumPy
 * Scikit-learn
-* ydata-profiling
+* fg-data-profiling
 * python-multipart
+
+Install the optional Streamlit interface dependency with `pip install -e ".[streamlit]"`.
 
 ### Frontend
 

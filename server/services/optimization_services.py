@@ -1,7 +1,6 @@
 from server.config import MODELS_DIR
 from server.services.dataset_services import load_dataset
 from src.meta_features import detect_problem_type
-from src.model_tuner import ModelTuner
 
 
 def optimize_model(
@@ -9,6 +8,7 @@ def optimize_model(
     target_column: str,
     model: str,
 ) -> dict:
+    from src.model_tuner import ModelTuner
 
     df = load_dataset(dataset_id)
 

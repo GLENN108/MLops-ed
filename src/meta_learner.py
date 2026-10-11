@@ -1,4 +1,5 @@
 import pickle
+import sys
 from pathlib import Path
 
 import pandas as pd
@@ -133,5 +134,7 @@ class MetaLearner:
 
     @staticmethod
     def load(path: Path) -> "MetaLearner":
+        # Older training scripts pickled this class as meta_learner.MetaLearner.
+        sys.modules.setdefault("meta_learner", sys.modules[__name__])
         with open(path, "rb") as f:
             return pickle.load(f)

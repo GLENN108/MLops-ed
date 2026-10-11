@@ -1,4 +1,3 @@
-from compare_train_size import run_comparison
 from server.services.dataset_services import load_dataset
 from src.meta_features import detect_problem_type
 
@@ -8,6 +7,7 @@ def verify_model(
     target_column: str,
     model: str,
 ) -> dict:
+    from compare_train_size import run_comparison
 
     df = load_dataset(dataset_id)
 

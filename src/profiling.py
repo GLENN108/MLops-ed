@@ -1,7 +1,7 @@
 from pathlib import Path
 
 import pandas as pd
-from ydata_profiling import ProfileReport
+from data_profiling import ProfileReport
 
 
 def generate_profile(df: pd.DataFrame, dataset_name: str, output_dir: Path) -> Path:
